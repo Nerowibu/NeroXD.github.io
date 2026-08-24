@@ -1,0 +1,378 @@
+/* Import Font Premium dari Google Fonts */
+@import url('https://googleapis.com');
+
+/* Variabel Utama & Tema Warna Gelap */
+:root {
+    --bg-main: #0b0c10;
+    --bg-card: #121318;
+    --text-primary: #ffffff;
+    --text-secondary: #c5c6c7;
+    --text-muted: #666d7a;
+    --accent-blue: #60a5fa;
+    --accent-indigo: #6366f1;
+    --max-width: 1100px;
+}
+
+/* Reset Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-secondary);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    min-height: 100vh;
+}
+
+.font-mono {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* --- NAVIGASI ATAS --- */
+.site-header {
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    width: 100%;
+}
+
+.brand {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+    font-size: 14px;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--text-primary);
+}
+
+/* --- TATA LETAK SECTION HOME (FONDASI AWALMU) --- */
+.main-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    width: 100%;
+    padding: 60px 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 64px;
+    align-items: center;
+    min-height: calc(100vh - 150px);
+}
+
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.section-tag {
+    font-size: 12px;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+}
+
+.hero-title {
+    font-size: 52px;
+    color: var(--text-primary);
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.gradient-text {
+    background: linear-gradient(to right, var(--accent-blue), var(--accent-indigo));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    color: var(--text-secondary);
+}
+
+.hero-description {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    max-w: 440px;
+}
+
+/* Tombol Aksi */
+.cta-buttons {
+    display: flex;
+    gap: 16px;
+    margin-top: 12px;
+    font-size: 13px;
+}
+
+.cta-buttons a {
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background: #ffffff;
+    color: #000000;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background: #e4e4e7;
+}
+
+.btn-secondary {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Jendela Terminal */
+.terminal-window {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(63, 63, 70, 0.4);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.terminal-window:hover {
+    border-color: rgba(99, 102, 241, 0.4);
+    box-shadow: 0 25px 60px -10px rgba(99, 102, 241, 0.15);
+    transform: translateY(-4px);
+}
+
+.terminal-hidden {
+    opacity: 0;
+    transform: scale(0.9) translateY(30px);
+    pointer-events: none;
+}
+
+.terminal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 12px;
+    margin-bottom: 24px;
+}
+
+.window-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.control-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.close { background: #ef4444; cursor: pointer; }
+.minimize { background: #eab308; }
+.maximize { background: #22c55e; }
+
+.terminal-title {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.terminal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 14px;
+}
+
+.command {
+    color: var(--accent-blue);
+    display: block;
+    margin-bottom: 6px;
+}
+
+.output {
+    color: var(--text-secondary);
+    padding-left: 12px;
+}
+
+/* Efek Kursor Mengetik */
+.typing-cursor::after {
+    content: '_';
+    animation: blink 0.8s infinite;
+    color: var(--accent-blue);
+    margin-left: 3px;
+    font-weight: bold;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.status-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.status-pulse {
+    width: 8px;
+    height: 8px;
+    background-color: #10b981;
+    border-radius: 50%;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .4; transform: scale(0.9); }
+}
+
+/* --- STYLE UNTUK SKILLS & PROJECTS (HALAMAN BARU) --- */
+.section-header {
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 32px;
+    color: var(--text-primary);
+    font-weight: 700;
+    margin-top: 8px;
+}
+
+.skills-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    width: 100%;
+    padding: 100px 24px;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill-card {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+}
+
+.skill-card:hover {
+    border-color: var(--accent-blue);
+    color: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+.projects-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    width: 100%;
+    padding: 100px 24px 150px 24px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.project-card {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 12px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    border-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.project-name {
+    color: var(--text-primary);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.project-desc {
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.project-tech {
+    font-size: 12px;
+    color: var(--accent-blue);
+}
+
+.project-link {
+    font-size: 13px;
+    color: var(--text-primary);
+    text-decoration: none;
+    margin-top: 8px;
+    display: inline-block;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+    color: var(--accent-indigo);
+}
+
+/* --- FOOTER --- */
+.site-footer {
+    padding: 40px 24px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-muted);
+    border-top: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+/* --- RESPONSIVITAS LAYAR HP --- */
+@media (max-width: 768px) {
+    .main-container {
+        grid-template-columns: 1fr;
+        padding-top: 20px;
+        gap: 40px;
+    }
+    .hero-title { font-size: 42px; }
+    .cta-buttons { flex-direction: column; }
+    .cta-buttons a { text-align: center; }
+}
