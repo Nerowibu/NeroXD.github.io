@@ -1,32 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEROXD DEVELOPER</title>
-    <style>
-        body {
-            background-image: url(https://oceanslinkupl.rf.gd/uploads/e857aa502b1682350915f22eea86fe07.png);
-            backkground-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            height: 100vh;
-            margin: 0
-        }
-        body {
-            font-family: Times New Roman, Times, serif ;
-            text-align: center;
-            margin-top: 50px;
-            background-color: #f4f4f4;
-        }
-            h2{ 
-            color: #ba0505;
-            
-        }
-    </style>
+    <title>NeroXD | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2> Konnichwa minna san</h2>
-    <p> yazid desu, </p>
+
+    <!-- Navigasi Atas -->
+    <header class="site-header font-mono">
+        <div class="brand">~/neroxd</div>
+        <nav class="nav-links">
+            <a href="#home" class="active">Home</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+        </nav>
+    </header>
+
+    <!-- KONTEN UTAMA (HOME) -->
+    <main class="main-container">
+        
+        <!-- Sisi Kiri: Teks Utama -->
+        <div class="hero-section">
+            <span class="section-tag font-mono">01 / PORTFOLIO</span>
+            <h1 class="hero-title">Hi, I'm <span class="gradient-text">NeroXD.</span></h1>
+            <p class="hero-subtitle font-mono">I build digital solutions & explore code.</p>
+            <p class="hero-description">
+                A tech enthusiast experimenting with frontend development, automation, and visual crafting. Welcome to my personal space.
+            </p>
+            
+            <!-- Tombol Aksi -->
+            <div class="cta-buttons font-mono">
+                <a href="#projects" class="btn-primary">Explore projects ↗</a>
+                <a href="#skills" class="btn-secondary">View skills</a>
+            </div>
+        </div>
+
+        <!-- Sisi Kanan: Jendela Terminal Interaktif -->
+        <div id="terminal-box" class="terminal-window font-mono">
+            <div class="terminal-header">
+                <div class="window-controls">
+                    <span id="btn-close" class="control-btn close" title="Close"></span>
+                    <span class="control-btn minimize"></span>
+                    <span class="control-btn maximize"></span>
+                </div>
+                <span class="terminal-title">about.sh</span>
+            </div>
+            
+            <div class="terminal-body">
+                <div class="terminal-section">
+                    <span class="command">$ whoami</span>
+                    <p id="typing-text" class="output">creative builder / tech explorer</p>
+                </div>
+                <div class="terminal-section">
+                    <span class="command">$ status</span>
+                    <p class="output status-container">
+                        <span class="status-pulse"></span> 
+                        <span>learning & building things</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- HALAMAN BARU: SKILLS -->
+    <section id="skills" class="skills-container">
+        <div class="section-header">
+            <span class="section-tag font-mono">02 / EXPERTISE</span>
+            <h2 class="section-title">My Tech Stack</h2>
+        </div>
+        <div class="skills-grid font-mono">
+            <div class="skill-card">HTML5</div>
+            <div class="skill-card">CSS3</div>
+            <div class="skill-card">JavaScript</div>
+            <div class="skill-card">Tailwind CSS</div>
+            <div class="skill-card">VS Code</div>
+            <div class="skill-card">Git & GitHub</div>
+        </div>
+    </section>
+
+    <!-- HALAMAN BARU: PROJECTS -->
+    <section id="projects" class="projects-container">
+        <div class="section-header">
+            <span class="section-tag font-mono">03 / WORKS</span>
+            <h2 class="section-title">Featured Projects</h2>
+        </div>
+        
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3 class="project-name">Personal Portfolio</h3>
+                <p class="project-desc">Website portofolio interaktif dengan tema gelap dan elemen terminal bawaan.</p>
+                <div class="project-tech font-mono">HTML &bull; CSS &bull; JS</div>
+                <a href="#" class="project-link font-mono">View Code ↗</a>
+            </div>
+            <div class="project-card">
+                <h3 class="project-name">Automation Script</h3>
+                <p class="project-desc">Skrip automasi sederhana untuk membantu merapikan alur kerja pemrograman harian.</p>
+                <div class="project-tech font-mono">JavaScript &bull; Node.js</div>
+                <a href="#" class="project-link font-mono">View Code ↗</a>
+            </div>
+            <div class="project-card">
+                <h3 class="project-name">UI Exploration</h3>
+                <p class="project-desc">Eksperimen desain antarmuka web modern dengan fokus pada pengalaman pengguna.</p>
+                <div class="project-tech font-mono">CSS Grid &bull; Flexbox</div>
+                <a href="#" class="project-link font-mono">View Code ↗</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer font-mono">
+        &copy; 2026 NeroXD. All rights reserved.
+    </footer>
+
+    <!-- Menghubungkan ke file JavaScript -->
+    <script src="app.js"></script>
 </body>
 </html>
