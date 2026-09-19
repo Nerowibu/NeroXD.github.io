@@ -19,13 +19,16 @@
     </header>
 
     <!-- KONTEN UTAMA (HOME) -->
-    <main class="main-container">
+    <main class="main-container" id="home">
         
         <!-- Sisi Kiri: Teks Utama -->
         <div class="hero-section">
             <span class="section-tag font-mono">01 / PORTFOLIO</span>
             <h1 class="hero-title">Hi, I'm <span class="gradient-text">NeroXD.</span></h1>
-            <p class="hero-subtitle font-mono">I build digital solutions & explore code.</p>
+            
+            <!-- Menggunakan class khusus untuk animasi ketik subtitle utama -->
+            <p class="hero-subtitle font-mono">I build <span class="hero-typing typing-cursor"></span></p>
+            
             <p class="hero-description">
                 A tech enthusiast experimenting with frontend development, automation, and visual crafting. Welcome to my personal space.
             </p>
@@ -51,14 +54,15 @@
             <div class="terminal-body">
                 <div class="terminal-section">
                     <span class="command">$ whoami</span>
-                    <p id="typing-text" class="output">creative builder / tech explorer</p>
+                    <!-- Menggunakan class khusus untuk animasi ketik di dalam terminal -->
+                    <p class="output"><span class="terminal-effect"></span></p>
                 </div>
                 <div class="terminal-section">
                     <span class="command">$ status</span>
-                    <p class="output status-container">
+                    <div class="output status-container">
                         <span class="status-pulse"></span> 
                         <span>learning & building things</span>
-                    </p>
+                    </div>
                 </div>
             </div>
         </div>
