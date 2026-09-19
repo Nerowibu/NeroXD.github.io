@@ -1,7 +1,8 @@
-/* Import Font Premium dari Google Fonts */
+/* ==========================================================================
+   1. IMPORT FONT & TEMA WARNA (VARIABEL)
+   ========================================================================== */
 @import url('https://googleapis.com');
 
-/* Variabel Utama & Tema Warna Gelap */
 :root {
     --bg-main: #0b0c10;
     --bg-card: #121318;
@@ -10,10 +11,12 @@
     --text-muted: #666d7a;
     --accent-blue: #60a5fa;
     --accent-indigo: #6366f1;
-    --max-width: 1100px;
+    --max-width: 1150px; /* Sedikit diperlebar agar tata letak grid lebih luas */
 }
 
-/* Reset Dasar */
+/* ==========================================================================
+   2. RESET DASAR & GLOBAL STYLES
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -21,7 +24,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* Pergerakan layar mulus saat menu diklik */
 }
 
 body {
@@ -29,15 +32,18 @@ body {
     color: var(--text-secondary);
     font-family: 'Plus Jakarta Sans', sans-serif;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 .font-mono {
     font-family: 'JetBrains Mono', monospace;
 }
 
-/* --- NAVIGASI ATAS --- */
+/* ==========================================================================
+   3. STYLING NAVIGASI BAR (NAVBAR)
+   ========================================================================== */
 .site-header {
-    padding: 24px;
+    padding: 30px 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -48,13 +54,14 @@ body {
 
 .brand {
     color: var(--text-muted);
-    font-size: 14px;
+    font-size: 15px;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 .nav-links {
     display: flex;
-    gap: 24px;
-    font-size: 14px;
+    gap: 32px;
+    font-size: 15px;
 }
 
 .nav-links a {
@@ -67,36 +74,40 @@ body {
     color: var(--text-primary);
 }
 
-/* --- TATA LETAK SECTION HOME (FONDASI AWALMU) --- */
+/* ==========================================================================
+   4. TATA LETAK UTAMA BERANDA (HERO SECTION - LEBIH PADAT & EFEK ZOOM)
+   ========================================================================== */
 .main-container {
     max-width: var(--max-width);
     margin: 0 auto;
     width: 100%;
-    padding: 60px 24px;
+    padding: 80px 24px; /* Padding disesuaikan agar konten seimbang */
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Responsif kiri-kanan */
     gap: 64px;
     align-items: center;
-    min-height: calc(100vh - 150px);
+    min-height: calc(100vh - 120px);
 }
 
 .hero-section {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 24px; /* Jarak antar baris teks dibuat lebih padat */
 }
 
 .section-tag {
-    font-size: 12px;
+    font-size: 13px;
     color: var(--text-muted);
     letter-spacing: 2px;
+    font-weight: 600;
 }
 
 .hero-title {
-    font-size: 52px;
+    font-size: 72px; /* Diperbesar dari 52px untuk efek zoom-in tebal */
     color: var(--text-primary);
     font-weight: 800;
-    line-height: 1.1;
+    line-height: 1.05;
+    letter-spacing: -2px;
 }
 
 .gradient-text {
@@ -106,27 +117,28 @@ body {
 }
 
 .hero-subtitle {
-    font-size: 18px;
-    color: var(--text-secondary);
+    font-size: 24px; /* Diperbesar dari 18px */
+    color: var(--text-primary);
+    font-weight: 500;
 }
 
 .hero-description {
-    font-size: 14px;
+    font-size: 16px; /* Diperbesar dari 14px agar lebih terbaca jelas */
     color: var(--text-muted);
     line-height: 1.6;
-    max-w: 440px;
+    max-width: 520px;
 }
 
 /* Tombol Aksi */
 .cta-buttons {
     display: flex;
     gap: 16px;
-    margin-top: 12px;
-    font-size: 13px;
+    margin-top: 8px;
+    font-size: 14px;
 }
 
 .cta-buttons a {
-    padding: 12px 24px;
+    padding: 14px 28px;
     border-radius: 8px;
     text-decoration: none;
     transition: all 0.2s ease;
@@ -140,38 +152,38 @@ body {
 
 .btn-primary:hover {
     background: #e4e4e7;
+    transform: translateY(-2px);
 }
 
 .btn-secondary {
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: var(--text-primary);
+    font-weight: 500;
 }
 
 .btn-secondary:hover {
     background: rgba(255, 255, 255, 0.05);
     border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
 }
 
-/* Jendela Terminal */
+/* ==========================================================================
+   5. STYLING JENDELA TERMINAL MINI
+   ========================================================================== */
 .terminal-window {
     background-color: var(--bg-card);
     border: 1px solid rgba(63, 63, 70, 0.4);
     border-radius: 12px;
-    padding: 24px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    padding: 28px; /* Dibuat sedikit lebih luas di dalam */
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: 'JetBrains Mono', monospace;
 }
 
 .terminal-window:hover {
     border-color: rgba(99, 102, 241, 0.4);
-    box-shadow: 0 25px 60px -10px rgba(99, 102, 241, 0.15);
-    transform: translateY(-4px);
-}
-
-.terminal-hidden {
-    opacity: 0;
-    transform: scale(0.9) translateY(30px);
-    pointer-events: none;
+    box-shadow: 0 35px 70px -10px rgba(99, 102, 241, 0.2);
+    transform: translateY(-6px);
 }
 
 .terminal-header {
@@ -179,7 +191,7 @@ body {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    padding-bottom: 12px;
+    padding-bottom: 14px;
     margin-bottom: 24px;
 }
 
@@ -195,19 +207,19 @@ body {
     display: inline-block;
 }
 
-.close { background: #ef4444; cursor: pointer; }
+.close { background: #ef4444; }
 .minimize { background: #eab308; }
 .maximize { background: #22c55e; }
 
 .terminal-title {
-    font-size: 12px;
+    font-size: 13px;
     color: var(--text-muted);
 }
 
 .terminal-body {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 22px;
     font-size: 14px;
 }
 
@@ -255,13 +267,15 @@ body {
     50% { opacity: .4; transform: scale(0.9); }
 }
 
-/* --- STYLE UNTUK SKILLS & PROJECTS (HALAMAN BARU) --- */
+/* ==========================================================================
+   6. STYLING BAGIAN KEAHLIAN (SKILLS SECTION)
+   ========================================================================== */
 .section-header {
     margin-bottom: 40px;
 }
 
 .section-title {
-    font-size: 32px;
+    font-size: 36px;
     color: var(--text-primary);
     font-weight: 700;
     margin-top: 8px;
@@ -271,7 +285,7 @@ body {
     max-width: var(--max-width);
     margin: 0 auto;
     width: 100%;
-    padding: 100px 24px;
+    padding: 80px 24px;
 }
 
 .skills-grid {
@@ -283,9 +297,9 @@ body {
 .skill-card {
     background-color: var(--bg-card);
     border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 10px 20px;
+    padding: 12px 24px;
     border-radius: 20px;
-    font-size: 13px;
+    font-size: 14px;
     color: var(--text-secondary);
     transition: all 0.2s ease;
 }
@@ -293,86 +307,99 @@ body {
 .skill-card:hover {
     border-color: var(--accent-blue);
     color: var(--text-primary);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
 }
 
+/* ==========================================================================
+   7. STYLING BAGIAN PROYEK (PROJECTS SECTION)
+   ========================================================================== */
 .projects-container {
     max-width: var(--max-width);
     margin: 0 auto;
     width: 100%;
-    padding: 100px 24px 150px 24px;
+    padding: 80px 24px 120px 24px;
 }
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 28px;
 }
 
 .project-card {
     background-color: var(--bg-card);
     border: 1px solid rgba(255, 255, 255, 0.04);
     border-radius: 12px;
-    padding: 28px;
+    padding: 32px;
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 16px;
     transition: all 0.3s ease;
 }
 
 .project-card:hover {
     border-color: rgba(255, 255, 255, 0.1);
-    transform: translateY(-4px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
 .project-name {
     color: var(--text-primary);
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 600;
 }
 
 .project-desc {
     color: var(--text-muted);
     font-size: 14px;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 .project-tech {
-    font-size: 12px;
+    font-size: 13px;
     color: var(--accent-blue);
+    font-family: 'JetBrains Mono', monospace;
 }
 
 .project-link {
-    font-size: 13px;
+    font-size: 14px;
     color: var(--text-primary);
     text-decoration: none;
     margin-top: 8px;
     display: inline-block;
+    font-weight: 500;
 }
 
 .project-link:hover {
     text-decoration: underline;
-    color: var(--accent-indigo);
+    color: var(--accent-blue);
 }
 
-/* --- FOOTER --- */
+/* ==========================================================================
+   8. FOOTER HINDO
+   ========================================================================== */
 .site-footer {
-    padding: 40px 24px;
+    padding: 50px 24px;
     text-align: center;
-    font-size: 12px;
+    font-size: 13px;
     color: var(--text-muted);
     border-top: 1px solid rgba(255, 255, 255, 0.02);
 }
 
-/* --- RESPONSIVITAS LAYAR HP --- */
+/* ==========================================================================
+   9. RESPONSIVITAS LAYAR HP
+   ========================================================================== */
+@media (max-width: 992px) {
+    .hero-title { font-size: 58px; }
+}
+
 @media (max-width: 768px) {
     .main-container {
         grid-template-columns: 1fr;
-        padding-top: 20px;
-        gap: 40px;
+        padding-top: 40px;
+        gap: 48px;
     }
-    .hero-title { font-size: 42px; }
+    .hero-title { font-size: 46px; }
     .cta-buttons { flex-direction: column; }
     .cta-buttons a { text-align: center; }
 }
