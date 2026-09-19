@@ -499,3 +499,132 @@ body {
     text-align: right;
     display: block;
 }
+
+/* ==========================================================================
+   11. DETAIL LENGKAP HALAMAN 404 CUSTOM REPLIKA
+   ========================================================================== */
+.error-page-body {
+    background-color: var(--bg-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 40px 40px 40px; /* Memberi ruang di sekeliling halaman */
+}
+
+.error-main-content {
+    max-width: var(--max-width);
+    width: 100%;
+    margin: auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Rata kiri persis sesuai gambar */
+}
+
+.error-large-title {
+    font-size: 140px; /* Ukuran teks 404 raksasa */
+    font-weight: 800;
+    color: var(--accent-blue); /* Aksen warna biru langit NeroXD */
+    line-height: 1;
+    margin-bottom: 28px;
+    letter-spacing: -3px;
+}
+
+.error-subtitle-text {
+    font-size: 15px;
+    color: var(--text-secondary);
+    margin-bottom: 36px;
+    letter-spacing: -0.5px;
+}
+
+.error-back-btn {
+    background-color: #f4f4f5; /* Putih gading / krem minimalis */
+    color: #0b0c10;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.error-back-btn:hover {
+    background-color: #e4e4e7;
+    transform: translateY(-2px);
+}
+
+/* Mengatur Footer Spesifik Sesuai Gambar Contoh */
+.error-custom-footer {
+    width: 100%;
+    max-width: var(--max-width);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Garis tepi bawah tipis pembatas */
+    padding-top: 30px;
+}
+
+.error-footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-start;
+}
+
+.error-user-tag {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.error-tagline {
+    color: var(--text-muted);
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.error-visitor {
+    color: var(--text-secondary);
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Mengatur ukuran grafis angka hitungan pengunjung */
+.error-counter-digits {
+    height: 15px;
+    /* Invert filter agar angka counter dari Glitch serasi dengan tema gelap */
+    filter: invert(90%) sepia(5%) saturate(300%) hue-rotate(180deg);
+    vertical-align: middle;
+}
+
+.error-footer-right {
+    display: flex;
+    gap: 20px;
+    font-size: 18px;
+    margin-bottom: 5px; /* Sedikit naik dari garis bawah */
+}
+
+.error-footer-right a {
+    color: var(--text-muted);
+    transition: color 0.2s ease;
+}
+
+.error-footer-right a:hover {
+    color: var(--text-primary);
+}
+
+/* Penyesuaian Responsif Layar HP */
+@media (max-width: 768px) {
+    .error-large-title { font-size: 90px; }
+    .error-page-body { padding: 40px 20px 20px 20px; }
+    .error-custom-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+    }
+    .error-footer-right {
+        align-self: flex-end; /* Memindahkan ikon ke kanan bawah saat di HP */
+    }
+}
